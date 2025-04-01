@@ -25,7 +25,7 @@ class KataLista
     {
         $parts = explode(" ",$instruction);
         $products = [];
-
+        $products[] = $parts[1];
         if ($parts[0] == "añadir") {
             if ($parts[2] == NULL) {
                 return $parts[1] . "x1";
@@ -36,6 +36,11 @@ class KataLista
             if (!in_array($parts[1], $products)) {
                 return "El producto seleccionado no existe";
             }
+        }
+        if ($parts[0] == "vaciar") {
+            unset($products);
+
+            return "";
         }
 
         return "";

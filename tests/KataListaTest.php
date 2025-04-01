@@ -41,6 +41,12 @@ class KataListaTest extends TestCase
         $this->assertEquals("El producto seleccionado no existe", $this->stringLista->addList("eliminar pan 2"));
     }
 
-
+    /**
+     * @test
+     */
+    public function givenVaciarCommandListOfProducts(): void
+    {
+        $this->assertEquals("", $this->stringLista->addList("vaciar"));
+    }
 }
  
