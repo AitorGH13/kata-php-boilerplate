@@ -25,6 +25,9 @@ class KataLista
     {
         $parts = explode(" ",$instruction);
         if($parts[0] == "añadir") {
+            if($parts[2] == NULL) {
+                return $parts[1] . "x1";
+            }
             return $parts[1] . "x" . $parts[2];
         }
 
