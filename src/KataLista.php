@@ -15,16 +15,19 @@ class KataLista
     }
 
     /**
-     * @param string $product
+     * @param string $instruction
+     * @param int $amount
      *
      * @return int
      * @throws \InvalidArgumentException
      */
-    public function addList(string $product): string
+    public function addList(string $instruction): string
     {
-        $list = "";
-        $list .= $product;
+        $parts = explode(" ",$instruction);
+        if($parts[0] == "añadir") {
+            return $parts[1] . "x" . $parts[2];
+        }
 
-        return $list;
+        return $instruction . "x1";
     }
 }

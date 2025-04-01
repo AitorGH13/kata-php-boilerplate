@@ -20,9 +20,9 @@ class KataListaTest extends TestCase
     /**
      * @test
      */
-    public function givenNewProductAddToList(): void
+    public function givenNewProductAndAmountReturnsListOfProducts(): void
     {
-        $this->assertEquals("pan", $this->stringLista->addList("pan"));
+        $this->assertEquals("panx2", $this->stringLista->addList("añadir pan 2"));
     }
 
 
