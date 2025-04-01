@@ -24,13 +24,20 @@ class KataLista
     public function addList(string $instruction): string
     {
         $parts = explode(" ",$instruction);
-        if($parts[0] == "añadir") {
-            if($parts[2] == NULL) {
+        $products = [];
+
+        if ($parts[0] == "añadir") {
+            if ($parts[2] == NULL) {
                 return $parts[1] . "x1";
             }
             return $parts[1] . "x" . $parts[2];
         }
+        if ($parts[0] == "eliminar") {
+            if (!in_array($parts[1], $products)) {
+                return "El producto seleccionado no existe";
+            }
+        }
 
-        return $instruction . "x1";
+        return "";
     }
 }
